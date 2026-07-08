@@ -1,0 +1,30 @@
+# 模型权重（太大，不上传）
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# 训练/推理输出
+runs/
+output/
+debug_vis/
+eval_output/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+
+# 系统
+.DS_Store
+Thumbs.db
+
+# 临时文件
+*.tmp
+*.temp

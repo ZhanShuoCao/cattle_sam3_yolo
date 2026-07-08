@@ -1,0 +1,37 @@
+# ═══════════════════════════════════════════════════════════════
+# Cow Segmentation Pipeline 默认配置文件
+# ═══════════════════════════════════════════════════════════════
+
+# 是否启用 detector-guided 模式
+detector_guided: true
+
+# ── 数据路径 ──
+# TODO: 修改为实际路径
+detection_data_dir: "D:/BaiduNetdiskDownload/识别数据集/cattle_dataset"
+segmentation_data_dir: "D:/BaiduNetdiskDownload/分割数据集"
+output_dir: "./output"
+
+# ── 检测器配置 ──
+detector_config:
+  model_path: "yolo11l.pt"
+  conf_threshold: 0.35
+  iou_threshold: 0.45
+  device: "cuda"
+  imgsz: 640
+  max_det: 20
+  augment: false
+
+# ── SAM3 配置 ──
+sam3_config:
+  model_type: "sam3"
+  # SAM3 权重路径（modelscope 缓存）
+  checkpoint_path: "D:/Desktop/sam3/sam3.pt"
+  device: "cuda"
+  prompt_mode: "box"
+  multimask_output: false
+  mask_threshold: 0.0
+
+# ── 可视化配置 ──
+vis_config:
+  enabled: false
+  output_dir: "./debug_vis"

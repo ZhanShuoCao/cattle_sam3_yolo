@@ -53,19 +53,6 @@ python run_inference.py --dir ./test_images --config config.yaml
 python run_inference.py --image test.jpg --detector-model ./cow_yolo.pt
 ```
 
-### 数据转换
-
-```python
-from data_utils import labelme_to_coco, yolo_dataset_to_coco
-
-# LabelMe 分割数据 → COCO JSON
-labelme_to_coco("D:/BaiduNetdiskDownload/分割数据集/已标注1-800",
-                output_json="./seg_gt.json")
-
-# YOLO 检测数据 → COCO JSON
-yolo_dataset_to_coco("./train/images", "./train/labels", ["cattle"],
-                     output_json="./det_train.json")
-```
 
 ## 配置说明
 
@@ -113,7 +100,7 @@ print(f"检测到 {len(result.boxes)} 头牛, 耗时 {result.elapsed_ms:.1f} ms"
 ### Q: SAM3 无法加载怎么办？
 1. 确保 `sam3-main` 在 PYTHONPATH 中
 2. 确保已安装 `triton` 等 SAM3 依赖
-3. 首次运行需联网从 HuggingFace 下载权重
+3. 首次运行需联网从 HuggingFace 下载权重（czsyaoshangxue@163.com可以发）
 4. Fallback 模式会使用 bbox mask，不影响代码运行
 
 ### Q: YOLO 模型不存在怎么办？

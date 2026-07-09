@@ -1,0 +1,35 @@
+detector_config:
+  augment: false
+  conf_threshold: 0.35
+  detector_type: owlv2
+  device: cuda
+  imgsz: 640
+  iou_threshold: 0.45
+  max_det: 20
+  model_path: D:/Desktop/sam3/runs/detect/train/weights/best.pt
+  owl_model_id: google/owlv2-large-patch14-finetuned
+  owl_nms_iou: 0
+  owl_text_prompt: cow
+  owl_threshold: 0.45
+detector_guided: true
+fragment_merge:
+  box_dedup_enabled: false
+  box_dedup_iou: 0.15
+  box_expand_ratio: 0
+  containment_threshold: 0.15
+  enabled: true
+  iou_threshold: 0.05
+  mask_conf_threshold: 0.25
+  min_component_area: 150
+  nms_threshold: 0.5
+output_dir: ./output
+sam3_config:
+  checkpoint_path: D:/Desktop/sam3/sam3.pt
+  device: cuda
+  mask_threshold: 0.0
+  model_type: sam3
+  multimask_output: false
+  prompt_mode: box
+vis_config:
+  enabled: false
+  output_dir: ./debug_vis

@@ -1,0 +1,8 @@
+# 模型权重（>100MB，GitHub 不支持）
+*.pt
+
+# 运行时产物
+output/
+debug_vis/
+__pycache__/
+*.pyc
